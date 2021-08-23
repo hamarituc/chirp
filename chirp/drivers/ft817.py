@@ -23,6 +23,7 @@ from chirp.settings import RadioSetting, RadioSettingGroup, \
     RadioSettingValueInteger, RadioSettingValueList, \
     RadioSettingValueBoolean, RadioSettingValueString, \
     RadioSettings
+import string
 import time
 import logging
 from textwrap import dedent
@@ -217,8 +218,7 @@ class FT817Radio(yaesu_clone.YaesuCloneModeRadio):
         #seekto 0x1979;
         struct mem_struct sixtymeterchannels[5];
     """
-    _CALLSIGN_CHARSET = [chr(x) for x in list(range(ord("0"), ord("9") + 1)) +
-                         list(range(ord("A"), ord("Z") + 1)) + [ord(" ")]]
+    _CALLSIGN_CHARSET = list(string.digits) + list(string.ascii_uppercase) + [" "]
     _CALLSIGN_CHARSET_REV = dict(
         list(zip(_CALLSIGN_CHARSET,
                  list(range(0, len(_CALLSIGN_CHARSET))))))

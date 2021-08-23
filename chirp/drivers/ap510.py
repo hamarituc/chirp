@@ -252,7 +252,7 @@ class AP510Memory20141215(AP510Memory):
         'path3': '27',  # like "WIDE1 1" else "0"
         'multiple': '28',
         'auto_on': '29',
-    }.items())
+    })
 
     def get_multiple(self):
         return dict(zip(

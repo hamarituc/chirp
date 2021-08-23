@@ -23,6 +23,7 @@ from chirp.settings import RadioSetting, RadioSettingGroup, \
     RadioSettingValueBoolean, RadioSettingValueString, \
     RadioSettings
 import os
+import string
 import logging
 from textwrap import dedent
 from chirp.util import safe_charset_string
@@ -315,8 +316,7 @@ class FT857Radio(ft817.FT817Radio):
 
     """
 
-    _CALLSIGN_CHARSET = [chr(x) for x in list(range(ord("0"), ord("9") + 1)) +
-                         list(range(ord("A"), ord("Z") + 1))] + [" ", "/"]
+    _CALLSIGN_CHARSET = list(string.digits) + list(string.ascii_uppercase) + [" ", "/"]
     _CALLSIGN_CHARSET_REV = dict(list(zip(_CALLSIGN_CHARSET,
                                  list(range(0, len(_CALLSIGN_CHARSET))))))
     _BEACON_CHARSET = _CALLSIGN_CHARSET + ["+", "."]
