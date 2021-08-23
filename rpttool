@@ -28,7 +28,7 @@ def open_device():
         s = serial.Serial(port="/dev/icom",
                           baudrate=idrp.IDRPx000V.BAUD_RATE,
                           timeout=0.1)
-    except Exception, e:
+    except Exception as e:
         print "Unable to open serial port %s: %s" % ("/dev/icom", e)
         return None
 
@@ -44,7 +44,7 @@ def read_freq():
 
     try:
         mem = rp.get_memory(0)
-    except Exception, e:
+    except Exception as e:
         print "Unable to read memory from device: %s" % e
         return 0
 
@@ -56,7 +56,7 @@ def read_freq():
 def _set_freq(rp):
     try:
         mem = rp.get_memory(0)
-    except Exception, e:
+    except Exception as e:
         print "Unable to read memory from device: %s" % e
         return False
 
@@ -75,7 +75,7 @@ def _set_freq(rp):
 
     try:
         rp.set_memory(mem)
-    except Exception, e:
+    except Exception as e:
         print "Failed to set frequency to %s: %s" % \
             (chirp_common.format_freq(mem.freq), e)
         return False
@@ -92,7 +92,7 @@ def set_freq():
 
     try:
         res = _set_freq(rp)
-    except Exception, e:
+    except Exception as e:
         print "Unknown error while setting frequency: %s" % e
         res = False
 

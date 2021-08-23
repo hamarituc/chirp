@@ -58,7 +58,7 @@ def supported_row(radio):
             try:
                 value = ", ".join([str(x) for x in value
                                    if not str(x).startswith("?")])
-            except Exception, e:
+            except Exception as e:
                 raise
 
         if key == "memory_bounds":
