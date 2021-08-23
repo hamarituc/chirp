@@ -62,16 +62,6 @@ print_trace = False
 
 def u(text):
     return six.text_type(text)
-    if isinstance(text, exceptions.BaseException):
-        text = text.args[0]
-    if type(text) is str:
-        return text
-    if isinstance(text, str):
-        if sys.stdin.encoding:
-            return codecs.decode(text, sys.stdin.encoding)
-        else:
-            return codecs.decode(text, "utf-8")
-    return str(text)
 
 
 def skip(skipper, text, skipWS, skipComments):
