@@ -101,7 +101,7 @@ def macos_build():
 
     EXEC = 'bash ./build/macos/make_pango.sh ' + \
            '/opt/local dist/chirp-%s.app' % CHIRP_VERSION
-    # print "exec string: %s" % EXEC
+    # print("exec string: %s" % EXEC)
     os.system(EXEC)
 
 

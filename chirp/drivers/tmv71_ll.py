@@ -386,6 +386,6 @@ if __name__ == "__main__":
     s = serial.Serial(port=sys.argv[1], baudrate=9600, dsrdtr=True,
                       timeout=0.25)
     # s.write("\r\r")
-    # print get_id(s)
+    # print(get_id(s))
     data = download(s)
     file(sys.argv[2], "wb").write(data)

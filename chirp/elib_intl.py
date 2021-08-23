@@ -485,7 +485,7 @@ def install(domain, localedir):
 
         import elib.intl
         elib.intl.install('myapplication', '/path/to/usr/share/locale')
-        print _('This string will be translated.')
+        print(_('This string will be translated.'))
 
     Note that this is only one way, albeit the most convenient way,
     to make the _() function available to your application. Because it affects
@@ -511,7 +511,7 @@ def install_module(domain, localedir):
 
         import elib.intl
         _ = elib.intl.install_module('mymodule', '/path/to/usr/share/locale')
-        print _('This string will be translated.')
+        print(_('This string will be translated.'))
 
     When writing packages, you can usually do this in the package's __init__.py
     file and import the _() function from the package namespace as needed.

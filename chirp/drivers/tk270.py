@@ -427,7 +427,7 @@ class Kenwood_P60_Radio(chirp_common.CloneModeRadio, chirp_common.ExperimentalRa
             self._VARIANT += self._kind + ", %d - %d MHz" % (low, high)
 
             # DEBUG
-            #print self._VARIANT
+            #print(self._VARIANT)
 
         except KeyError:
             LOG.debug("Wrong Kenwood radio, ID or unknown variant")
@@ -488,7 +488,7 @@ class Kenwood_P60_Radio(chirp_common.CloneModeRadio, chirp_common.ExperimentalRa
         actual = self.get_active(chan)
         if actual != bool(value):
             # DEBUG
-            #print "VALUE %s fliping" % int(not value)
+            #print("VALUE %s fliping" % int(not value))
 
             # I have to flip the value
             rbyte = self._memobj.active[byte]

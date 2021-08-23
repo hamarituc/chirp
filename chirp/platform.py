@@ -485,8 +485,8 @@ def _do_test():
     print("OS Version: %s" % __pform.os_version_string())
     # __pform.open_text_file("d-rats.py")
 
-    # print "Open file: %s" % __pform.gui_open_file()
-    # print "Save file: %s" % __pform.gui_save_file(default_name="Foo.txt")
+    # print("Open file: %s" % __pform.gui_open_file())
+    # print("Save file: %s" % __pform.gui_save_file(default_name="Foo.txt"))
     print("Open folder: %s" % __pform.gui_select_dir("/tmp"))
 
 if __name__ == "__main__":
